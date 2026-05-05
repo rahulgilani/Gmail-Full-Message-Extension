@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Gmail Full Message",
+  "version": "1.0",
+  "description": "Adds a button at the top of clipped Gmail messages to open the full version in a background tab.",
+  "host_permissions": ["https://mail.google.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
